@@ -1,13 +1,12 @@
 <script lang="ts">
 	import type { Gradio } from "@gradio/utils";
-	import HTML from "./shared/HTML.svelte";
+	import MCPlayer from "./shared/MCPlayer.svelte";
 	import { StatusTracker } from "@gradio/statustracker";
 	import type { LoadingStatus } from "@gradio/statustracker";
 	import { Block, BlockLabel } from "@gradio/atoms";
 	import { Code as CodeIcon } from "@gradio/icons";
-	import { css_units } from "@gradio/utils";
 
-	export let label = "HTML";
+	export let label = "Motion Canvas Player";
 	export let elem_id = "";
 	export let elem_classes: string[] = [];
 	export let visible = true;
@@ -46,7 +45,8 @@
 			: undefined}
 		style:max-height={max_height ? css_units(max_height) : undefined}
 	>
-		<HTML
+		<MCPlayer
+			min_height={loading_status && loading_status?.status !== "complete"}
 			{value}
 			{elem_classes}
 			{visible}

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { createEventDispatcher } from "svelte";
-
+	import '@motion-canvas/player';
 	export let elem_classes: string[] = [];
 	export let value: string;
 	export let visible = true;
@@ -19,7 +19,15 @@
 	class:hide={!visible}
 	on:click={() => dispatch("click")}
 >
-	{@html value}
+
+	Debug: { value }
+	{#if value}
+		<motion-canvas-player
+			src="{ value }"
+			auto="true"
+		></motion-canvas-player>
+	{/if}
+
 </div>
 
 <style>
