@@ -12,7 +12,7 @@ app_file: space.py
 # `gradio_motioncanvasplayer`
 <a href="https://pypi.org/project/gradio_motioncanvasplayer/" target="_blank"><img alt="PyPI - Version" src="https://img.shields.io/pypi/v/gradio_motioncanvasplayer"></a>  
 
-Motion Canvas Player to render Motion Canvas projects
+This component displays Motion Canvas projects directly in the browser. [Motion Canvas](https://motioncanvas.io/) is a library for generating animations, videos or presentations via the Canvas API. All animations are defined by code - a great playground for AI agents. The source code for the example animation can be found at [https://github.com/prathje/gradio-motion-canvas-example](https://github.com/prathje/gradio-motion-canvas-example).
 
 ## Installation
 
