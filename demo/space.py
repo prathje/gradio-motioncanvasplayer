@@ -21,7 +21,7 @@ with gr.Blocks(
 # `gradio_motioncanvasplayer`
 
 <div style="display: flex; gap: 7px;">
-<img alt="Static Badge" src="https://img.shields.io/badge/version%20-%200.0.1%20-%20orange">  
+<a href="https://pypi.org/project/gradio_motioncanvasplayer/" target="_blank"><img alt="PyPI - Version" src="https://img.shields.io/pypi/v/gradio_motioncanvasplayer"></a>  
 </div>
 
 Motion Canvas Player to render Motion Canvas projects
@@ -40,20 +40,19 @@ pip install gradio_motioncanvasplayer
 ```python
 
 import gradio as gr
-from pathlib import Path
-import uvicorn
+import os
 
 from gradio_motioncanvasplayer import MotionCanvasPlayer
 
-project_path = "/gradio_api/file=demo/public/project-3.17.2.js"
+gr.set_static_paths(paths=[os.path.join(os.path.dirname(__file__), "public")])
+project_local_path = os.path.join(os.path.dirname(__file__), "public/project-3.17.2.js")
+project_api_path = "/gradio_api/file=" + project_local_path
 
-
-gr.set_static_paths(paths=[Path.cwd().absolute()/"demo/public"])
 
 demo = gr.Interface(
     lambda x:x,
     None,  # interactive version of your component, not relevant for this demo
-    MotionCanvasPlayer(project_path, auto=True, quality=0.5, width=1920, height=1080, variables="{}"),  # static version of your component
+    MotionCanvasPlayer(project_api_path, auto=True, quality=0.5, width=1920, height=1080, variables="{}"),  # static version of your component
     clear_btn=None
 
 )
