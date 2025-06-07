@@ -47,9 +47,12 @@ gr.set_static_paths(paths=[Path.cwd().absolute()/"demo/public"])
 
 demo = gr.Interface(
     lambda x:x,
-    MotionCanvasPlayer(project_path),  # interactive version of your component
-    MotionCanvasPlayer(project_path),  # static version of your component
+    None,  # interactive version of your component
+    MotionCanvasPlayer(project_path, auto=True, quality=0.5, width=1920, height=1080, variables="{}"),  # static version of your component
+    clear_btn=None,
+    flagging_mode=None
     # examples=[[example]],  # uncomment this line to view the "example version" of your component
+    
 )
 
 

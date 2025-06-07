@@ -22,18 +22,10 @@ gr.set_static_paths(paths=[Path.cwd().absolute()/"demo/public"])
 
 demo = gr.Interface(
     lambda x:x,
-    MotionCanvasPlayer(project_path),  # interactive version of your component
-    MotionCanvasPlayer(project_path),  # static version of your component
-    # examples=[[example]],  # uncomment this line to view the "example version" of your component
+    None,  # interactive version of your component, not relevant for this demo
+    MotionCanvasPlayer(project_path, auto=True, quality=0.5, width=1920, height=1080, variables="{}"),  # static version of your component
+    clear_btn=None
+
 )
 
-
 demo.launch(server_name="0.0.0.0", server_port=7860)
-
-
-#app = gr.mount_gradio_app(app, demo, path="/")
-
-if __name__ == "__main__":
-    pass
-    # serve the app
-    #uvicorn.run(app, host="0.0.0.0", port=7860)

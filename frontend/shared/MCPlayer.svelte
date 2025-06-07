@@ -17,6 +17,14 @@
 	}>();
 
 	$: value, dispatch("change");
+
+	let mcPlayerAdditionalAttributes = {};
+	if (width) mcPlayerAdditionalAttributes.width = width;
+	if (height) mcPlayerAdditionalAttributes.height = height;
+	if (auto) mcPlayerAdditionalAttributes.auto = auto;
+	if (quality) mcPlayerAdditionalAttributes.quality = quality;
+	if (variables) mcPlayerAdditionalAttributes.variables = variables;
+
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
@@ -25,16 +33,11 @@
 	class:hide={!visible}
 	on:click={() => dispatch("click")}
 >
-	Debug: { value }
 	<!-- See https://github.com/motion-canvas/motion-canvas/blob/main/packages/player/types/main.d.ts for supported props -->
 	{#if value}
 		<motion-canvas-player
 			src={value}
-			width={width}
-			height={height}
-			auto={auto}
-			quality={quality}
-			variables={variables}
+			{...mcPlayerAdditionalAttributes}
 		></motion-canvas-player>
 	{/if}
 </div>
