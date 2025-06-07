@@ -10,7 +10,6 @@
 	export let elem_id = "";
 	export let elem_classes: string[] = [];
 	export let visible = true;
-	export let value = "";
 	export let loading_status: LoadingStatus;
 	export let gradio: Gradio<{
 		change: never;
@@ -22,6 +21,13 @@
 	export let max_height: number | undefined = undefined;
 	export let container = false;
 	export let padding = true;
+	export let value = "";
+
+	export let auto: bool | undefined = undefined;
+	export let quality: number | undefined = undefined;
+	export let width: int | undefined = undefined;
+	export let height: int | undefined = undefined;
+	export let variables: str | undefined = undefined;
 </script>
 
 <Block {visible} {elem_id} {elem_classes} {container} padding={false}>
@@ -48,6 +54,12 @@
 		<MCPlayer
 			min_height={loading_status && loading_status?.status !== "complete"}
 			{value}
+			{auto}
+			{quality}
+			{width}
+			{height}
+			{variables}
+			
 			{elem_classes}
 			{visible}
 			on:change={() => gradio.dispatch("change")}

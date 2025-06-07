@@ -3,6 +3,12 @@
 	import '@motion-canvas/player';
 	export let elem_classes: string[] = [];
 	export let value: string;
+	export let width: number | undefined;
+	export let height: number | undefined;
+	export let auto: boolean | undefined;
+	export let quality: number | undefined;
+	export let variables: string | undefined;
+
 	export let visible = true;
 
 	const dispatch = createEventDispatcher<{
@@ -19,15 +25,18 @@
 	class:hide={!visible}
 	on:click={() => dispatch("click")}
 >
-
 	Debug: { value }
+	<!-- See https://github.com/motion-canvas/motion-canvas/blob/main/packages/player/types/main.d.ts for supported props -->
 	{#if value}
 		<motion-canvas-player
-			src="{ value }"
-			auto="true"
+			src={value}
+			width={width}
+			height={height}
+			auto={auto}
+			quality={quality}
+			variables={variables}
 		></motion-canvas-player>
 	{/if}
-
 </div>
 
 <style>

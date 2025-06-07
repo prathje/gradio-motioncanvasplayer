@@ -43,6 +43,11 @@ class MotionCanvasPlayer(Component):
         max_height: int | None = None,
         container: bool = False,
         padding: bool = True,
+        auto: bool | None = False,
+        quality: number | None = None,
+        width: int | None = None,
+        height: int | None = None,
+        variables: str | None = None,
     ):
         """
         Parameters:
@@ -61,10 +66,23 @@ class MotionCanvasPlayer(Component):
             max_height: The maximum height of the component, specified in pixels if a number is passed, or in CSS units if a string is passed. If content exceeds the height, the component will scroll.
             container: If True, the MotionCanvasPlayer component will be displayed in a container. Default is False.
             padding: If True, the MotionCanvasPlayer component will have a certain padding (set by the `--block-padding` CSS variable) in all directions. Default is True.
+            auto: If True, the MotionCanvasPlayer component will automatically play the animation. Default is False.
+            quality: The quality of the MotionCanvasPlayer component. Default is None which uses the project's default settings.
+            width: The width of the MotionCanvasPlayer component. Default is None which uses the project's default settings.
+            height: The height of the MotionCanvasPlayer component. Default is None which uses the project's default settings.
+            variables: The variables of the MotionCanvasPlayer component as a JSON string. Default is None.
         """
         self.min_height = min_height
         self.max_height = max_height
         self.padding = padding
+
+        self.auto = auto
+        self.quality = quality
+        self.width = width
+        self.height = height
+        self.variables = variables
+
+
         super().__init__(
             label=label,
             every=every,

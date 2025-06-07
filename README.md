@@ -32,19 +32,18 @@ import uvicorn
 
 from gradio_motioncanvasplayer import MotionCanvasPlayer
 
-project_path = "public/project-3.17.2.js"
+project_path = "/gradio_api/file=demo/public/project-3.17.2.js"
 
 # create a FastAPI app
 app = FastAPI()
 
-# create a static directory to store the static public files
-static_dir = Path('./public')
-static_dir.mkdir(parents=True, exist_ok=True)
 
 # mount FastAPI StaticFiles server
-app.mount("/public", StaticFiles(directory=static_dir), name="public")
+#app.mount("/public", StaticFiles(directory='demo/public'), name="public")
 
 example = MotionCanvasPlayer().example_value()
+
+gr.set_static_paths(paths=[Path.cwd().absolute()/"demo/public"])
 
 demo = gr.Interface(
     lambda x:x,
@@ -53,11 +52,16 @@ demo = gr.Interface(
     # examples=[[example]],  # uncomment this line to view the "example version" of your component
 )
 
-app = gr.mount_gradio_app(app, demo, path="/")
-if __name__ == "__main__":
 
+demo.launch(server_name="0.0.0.0", server_port=7860)
+
+
+#app = gr.mount_gradio_app(app, demo, path="/")
+
+if __name__ == "__main__":
+    pass
     # serve the app
-    uvicorn.run(app, host="0.0.0.0", port=7860)
+    #uvicorn.run(app, host="0.0.0.0", port=7860)
 ```
 
 ## `MotionCanvasPlayer`
@@ -267,6 +271,71 @@ bool
 </td>
 <td align="left"><code>True</code></td>
 <td align="left">If True, the MotionCanvasPlayer component will have a certain padding (set by the `--block-padding` CSS variable) in all directions. Default is True.</td>
+</tr>
+
+<tr>
+<td align="left"><code>auto</code></td>
+<td align="left" style="width: 25%;">
+
+```python
+bool | None
+```
+
+</td>
+<td align="left"><code>False</code></td>
+<td align="left">If True, the MotionCanvasPlayer component will automatically play the animation. Default is False.</td>
+</tr>
+
+<tr>
+<td align="left"><code>quality</code></td>
+<td align="left" style="width: 25%;">
+
+```python
+number | None
+```
+
+</td>
+<td align="left"><code>None</code></td>
+<td align="left">The quality of the MotionCanvasPlayer component. Default is None which uses the project's default settings.</td>
+</tr>
+
+<tr>
+<td align="left"><code>width</code></td>
+<td align="left" style="width: 25%;">
+
+```python
+int | None
+```
+
+</td>
+<td align="left"><code>None</code></td>
+<td align="left">The width of the MotionCanvasPlayer component. Default is None which uses the project's default settings.</td>
+</tr>
+
+<tr>
+<td align="left"><code>height</code></td>
+<td align="left" style="width: 25%;">
+
+```python
+int | None
+```
+
+</td>
+<td align="left"><code>None</code></td>
+<td align="left">The height of the MotionCanvasPlayer component. Default is None which uses the project's default settings.</td>
+</tr>
+
+<tr>
+<td align="left"><code>variables</code></td>
+<td align="left" style="width: 25%;">
+
+```python
+str | None
+```
+
+</td>
+<td align="left"><code>None</code></td>
+<td align="left">The variables of the MotionCanvasPlayer component as a JSON string. Default is None.</td>
 </tr>
 </tbody></table>
 
