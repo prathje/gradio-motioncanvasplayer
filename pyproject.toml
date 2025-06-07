@@ -45,7 +45,7 @@ classifiers = [
 dev = ["build", "twine"]
 
 [tool.hatch.build]
-artifacts = ["/backend/gradio_motioncanvasplayer/templates", "*.pyi"]
+artifacts = ["/backend/gradio_motioncanvasplayer/templates", "*.pyi", "/Users/pr/.pyenv/versions/3.10.17/lib/python3.10/site-packages/gradio_motioncanvasplayer/templates"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["/backend/gradio_motioncanvasplayer"]
