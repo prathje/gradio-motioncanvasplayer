@@ -9,11 +9,11 @@ build-backend = "hatchling.build"
 [project]
 name = "gradio_motioncanvasplayer"
 version = "0.0.1"
-description = "Motion Canvas Player to render Motion Canvas projects"
+description = "This custom component for Gradio displays Motion Canvas projects directly in the browser. Motion Canvas is a library for generating animations, videos or presentations via the Canvas API. All animations are defined by code - a great playground for AI agents. An exemplary demo for this component is available in this Huggingface Space: https://huggingface.co/spaces/prathje/gradio_motioncanvasplayer. The source code for the included project can be found at: https://github.com/prathje/gradio-motion-canvas-example."
 readme = "README.md"
 license = "mit"
 requires-python = ">=3.10"
-authors = [{ name = "YOUR NAME", email = "YOUREMAIL@domain.com" }]
+authors = [{ name = "Patrick Rathje", email = "info@patrickrathje.de" }]
 keywords = ["gradio-custom-component", "gradio-template-HTML", "Motion Canvas", "Animation", "Player"]
 # Add dependencies here
 dependencies = ["gradio>=4.0,<6.0"]
@@ -37,9 +37,9 @@ classifiers = [
 # This will make it easy for people to find your deployed demo or source code when they
 # encounter your project in the wild.
 
-# [project.urls]
-# repository = "your github repository"
-# space = "your space url"
+[project.urls]
+repository = "https://github.com/prathje/gradio-motioncanvasplayer"
+space = "https://huggingface.co/spaces/prathje/gradio_motioncanvasplayer"
 
 [project.optional-dependencies]
 dev = ["build", "twine"]
