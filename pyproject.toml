@@ -45,7 +45,7 @@ space = "https://huggingface.co/spaces/prathje/gradio_motioncanvasplayer"
 dev = ["build", "twine"]
 
 [tool.hatch.build]
-artifacts = ["/backend/gradio_motioncanvasplayer/templates", "*.pyi", "/Users/pr/.pyenv/versions/3.10.17/lib/python3.10/site-packages/gradio_motioncanvasplayer/templates"]
+artifacts = ["/backend/gradio_motioncanvasplayer/templates", "*.pyi"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["/backend/gradio_motioncanvasplayer"]
