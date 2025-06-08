@@ -1,7 +1,7 @@
 ---
 tags: [gradio-custom-component, HTML, Motion Canvas, Animation, Player, custom-component-track]
 title: gradio_motioncanvasplayer
-short_description: Motion Canvas Player to render Motion Canvas projects
+short_description: This custom component for Gradio displays Motion Canvas projects in the browser. Motion Canvas is a library for generating animations, videos, or presentations via the Canvas API. All animations are defined by code - an excellent playground for AI agents. An exemplary demo for this component is available in this Huggingface Space: https://huggingface.co/spaces/prathje/gradio_motioncanvasplayer. The source code for the included project can be found at: https://github.com/prathje/gradio-motion-canvas-example.
 colorFrom: blue
 colorTo: yellow
 sdk: gradio
