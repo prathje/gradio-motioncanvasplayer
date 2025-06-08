@@ -12,7 +12,7 @@ app_file: space.py
 # `gradio_motioncanvasplayer`
 <a href="https://pypi.org/project/gradio_motioncanvasplayer/" target="_blank"><img alt="PyPI - Version" src="https://img.shields.io/pypi/v/gradio_motioncanvasplayer"></a> <a href="https://github.com/prathje/gradio-motioncanvasplayer/issues" target="_blank"><img alt="Static Badge" src="https://img.shields.io/badge/Issues-white?logo=github&logoColor=black"></a> <a href="https://huggingface.co/spaces/prathje/gradio_motioncanvasplayer/discussions" target="_blank"><img alt="Static Badge" src="https://img.shields.io/badge/%F0%9F%A4%97%20Discuss-%23097EFF?style=flat&logoColor=black"></a>
 
-This custom component for Gradio displays Motion Canvas projects directly in the browser. Motion Canvas is a library for generating animations, videos or presentations via the Canvas API. All animations are defined by code - a great playground for AI agents. An exemplary demo for this component is available in this Huggingface Space: https://huggingface.co/spaces/prathje/gradio_motioncanvasplayer. The source code for the included project can be found at: https://github.com/prathje/gradio-motion-canvas-example.
+This custom component for Gradio displays Motion Canvas projects in the browser. Motion Canvas is a library for generating animations, videos, or presentations via the Canvas API. All animations are defined by code - an excellent playground for AI agents. An exemplary demo for this component is available in this Huggingface Space: https://huggingface.co/spaces/prathje/gradio_motioncanvasplayer. The source code for the included project can be found at: https://github.com/prathje/gradio-motion-canvas-example.
 
 ## Installation
 
